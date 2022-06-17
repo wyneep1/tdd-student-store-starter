@@ -1,0 +1,35 @@
+
+.product-card{
+    display: flex;
+    justify-items: center;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    border: solid 1px black;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+
+  }
+  #product-poster{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 250px;
+    width: 248px;
+    
+    
+  }
+  .product-name {
+    text-align: center;
+    color:rgb(30, 31, 114);
+    font-weight: bold;
+    font-size: medium;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
+  .product-price{
+    text-align: center;
+    color:rgb(30, 31, 114);
+    font-weight: bold;
+    font-size: medium;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }

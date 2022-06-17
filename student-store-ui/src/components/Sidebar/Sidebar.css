@@ -1,0 +1,22 @@
+.sidebar
+{
+    height: 100%;
+    width: 35px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #2b4344;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+.toggle-button
+{
+    display: block;
+    background-color: #2b4344;
+    border: none;
+}
+#toggle-image
+{
+    width: 30px;
+}
