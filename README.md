@@ -14,7 +14,7 @@ Selling merchandise in the modern era requires digital solutions. For this proje
 - [X] On initial page load, display the products at the [GET /store endpoint](https://codepath-store-api.herokuapp.com/store).
 - [X] User can click on the categories (Clothing, food, etc) to filter the product grid by type.
 - [X] User can search for products.
-- [ ] User can click on a product in the grid to view additional product details. Navigation is via a React Router.
+- [X] User can click on a product in the grid to view additional product details. Navigation is via a React Router.
 - [ ] User can click to expand the shopping cart in the left navigation.
 - [ ] User can click the '+' button on a product cart to increment that product in the shopping cart.
 - [ ] User can click the '-' button on a product cart to increment that product in the shopping cart.
@@ -40,7 +40,7 @@ The following specifications were met on the Express backend and the React front
   - [ ] The core App component that contains the routes for the app and does the initial data fetching
   - [ ] Renders a `BrowserRouter` component that contains a `Routes` component with the following routes:
     - [X] `/` - Should render the `Home.jsx` component
-    - [ ] `/products/:productId` - should render the `ProductDetail` component
+    - [X] `/products/:productId` - should render the `ProductDetail` component
     - [ ] `*` - anything else should render the `NotFound` component
   - [X] Renders the `Navbar` component on every route
   - [X] Renders the `Sidebar` component on every route
