@@ -48,12 +48,7 @@ export default function App() {
 
   function handleOnToggle(){
     //should toggle the open/closed state of the `Sidebar`
-    if(input === true){
-      setIsOpen(false);
-    }
-    else{
-      setIsOpen(true);
-    }
+    setIsOpen(prev => !prev)
   }
 
   function handleAddItemToCart(productID){
@@ -102,7 +97,8 @@ export default function App() {
         <Sidebar isOpen={isOpen} shoppingCart={shoppingCart} products={products} checkOutForm={checkOutForm} handleOnCheckoutFormChange={handleOnCheckoutFormChange} handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm} handleOnToggle={handleOnToggle}/>
           <Routes>
             <Route path="/" element={<Home isFetching={isFetching} handleAddItemToCart={handleAddItemToCart} products={products} handleRemoveItemFromCart={handleRemoveItemFromCart}/>} />
-            <Route path="/products/:productId" element={<ProductDetail />}/>
+            <Route path="/products/:productId" element={<ProductDetail isFetching={isFetching} setIsFetching={setIsFetching}
+              error={error} setError={setError} shoppingCart={shoppingCart}/>}/>
             <Route path="*" element={<NotFound />} />
           </Routes>
           {/* YOUR CODE HERE! */}

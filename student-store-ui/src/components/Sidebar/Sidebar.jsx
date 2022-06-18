@@ -1,12 +1,12 @@
 import * as React from "react"
 import "./Sidebar.css"
-export default function Sidebar() {
+export default function Sidebar({isOpen, shoppingCart, products, checkOutForm, handleOnCheckoutFormChange, handleOnSubmitCheckoutForm, handleOnToggle }) {
   return (
-    <section className="sidebar">
-      <button className="toggle-button"><img src="../src/arrow.png" alt="arrow" id="toggle-image"/></button>
-      <button className="toggle-button"><img src="../src/icons8-shopping-cart-64.png" alt="Shopping Cart" id="toggle-image"/></button>
-      <button className="toggle-button"><img src="../src/dollar_sign.png" alt="Dollar Sign" id="toggle-image"/></button>
-      <button className="toggle-button"><img src="../src/checklist.png" alt="checklist" id="toggle-image"/></button>
+    <section className={isOpen ? "sidebar" : "sidebar closed"}>
+      <button className="toggle-button" onClick={handleOnToggle}><img src="../src/arrow.png" alt="arrow" id="toggle-image"/></button>
+      <button className="toggle-button" onClick={handleOnToggle}><img src="../src/icons8-shopping-cart-64.png" alt="Shopping Cart" id="toggle-image"/></button>
+      <button className={isOpen ? "closed" : "checkout-Btn"}><img src="../src/dollar_sign.png" alt="Dollar Sign" id="toggle-image"/></button>
+      <button className={isOpen ? "closed" : "checkout-Btn"}><img src="../src/checklist.png" alt="checklist" id="toggle-image"/></button>
     </section>
   )
 }

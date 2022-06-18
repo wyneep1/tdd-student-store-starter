@@ -8,7 +8,9 @@
     flex-direction: column;
     margin-left: auto;
     margin-right: auto;
-
+  }
+  .product-card:hover{
+    background-color: lightcyan;
   }
   #product-poster{
     display: block;
@@ -16,6 +18,7 @@
     margin-right: auto;
     height: 250px;
     width: 248px;
+    max-width: var(--maxContentWidth);
     
     
   }
@@ -32,4 +35,30 @@
     font-weight: bold;
     font-size: medium;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
+  .product-description{
+    text-align: center;
+    color:rgb(30, 31, 114);
+    font-weight: bold;
+    font-size: medium;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
+  .button{
+    width: 80px;
+    height: 100%;
+    display: flex;
+    width: 20px;
+    height: 20px;
+    border: solid 1px green;
+    color: green;
+    cursor: pointer;
+    padding: 5px;
+    flex-direction: row;
+  }
+  .add{
+    flex-direction: row;
+  }
+
+  .remove{
+    flex-direction: row;
   }

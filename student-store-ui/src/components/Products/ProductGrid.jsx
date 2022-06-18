@@ -26,6 +26,7 @@ console.log("Entered product grid: ", props.products)
 				:
          displayProducts.map((product, index) => {
             return <ProductCard key = {product.id} 
+                                class = "product-box"
                                 showDescription={false} 
                                 product={product}
                                 productId = {product.id}/>;

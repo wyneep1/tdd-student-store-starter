@@ -1,5 +1,5 @@
 import * as React from "react"
-
+import "./Search.css"
 export default function Search(props) {
 
     const setByButton = (c)=>{

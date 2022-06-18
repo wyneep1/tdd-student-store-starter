@@ -1,7 +1,6 @@
 import * as React from "react"
 
 export default function NotFound(){
-    return(
-        console.log("Entered Not Found")
-    )
+    return <div className="not-found">NOT FOUND 404</div>
+    
 }

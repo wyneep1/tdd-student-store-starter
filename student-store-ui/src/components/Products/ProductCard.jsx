@@ -6,14 +6,22 @@ import {
   Link, 
 } from "react-router-dom";
 
-export default function ProductCard(props) {
-  const [isSelected, setSelected] = React.useState(false);
+export default function ProductCard({ product, productId, quantity = 0, handleAddItemToCart, handleRemoveItemFromCart, showDescription }) {
 
   return (
     <div className="product-card">
-        <img id="product-poster" src={props.product.image} />
-        <h2 className="product-name">{props.product.name}</h2>
-        <p className="product-price">${props.product.price}</p>
+        <Link to={"products/" + product.id}>
+        <img id="product-poster" src={product.image}/>
+        </Link>
+        <h2 className="product-name">{product.name}</h2>
+        <p className="product-price">${product.price}</p>
+        {showDescription &&
+            <p className="product-description">{product.description}</p>
+        } 
+          <button type="button" className="add" onClick={() => handleAddItemToCart(productId)}>+</button>
+          <button type="button" className="remove" onClick={() => handleRemoveItemFromCart(productId)}>-</button>
+          <p className="product-quantity">{quantity}</p>
     </div>
-  )
-}
+  )}
+
+  
