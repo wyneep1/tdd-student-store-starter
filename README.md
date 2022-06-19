@@ -4,7 +4,7 @@
 
 Selling merchandise in the modern era requires digital solutions. For this project, you'll be tasked with designing and constructing an online student store for the College of Codepath. The application entails a frontend user interface for potential customers to peruse the goods, and a backend API to handle data management. The API will be built with Node and Express and the UI will be built with React.
 
-// Include your gif here
+(https://recordit.co/3KAydDUUzr)
 
 ### Application Features
 
@@ -278,3 +278,26 @@ The following specifications were met on the Express backend and the React front
         - **optional**:
           - [ ] `receipt` - text describing the order (what might go on a receipt)
       - [ ] It should then send a JSON response back to the client with the new purchase like so: `{ "purchase": purchase }`. The response should have a `201` status code for a resource created action.
+___________________________________________________________________________________________________________________________________________
+
+Reflection
+
+Did the topics discussed in your labs prepare you to complete the assignment? Be specific, which features in your weekly assignment did you feel unprepared to complete?
+
+  Yes, I feel like the first lab in particular helped me understand how to pass props and utilize useStates, as those were relatively new concepts to me! 
+
+If you had more time, what would you have done differently? Would you have added additional features? Changed the way your project responded to a particular event, etc.
+
+  If I had more time, I would have probably added more of the stretch features, particularly the shopping cart one as I feel like I am ready to take on that challenge. I would have also spent more time on the CSS since I didn't really worry too much about it for this project since I was busy trying to make sure I have the major core features down first.
+
+Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
+
+  I was pretty happy with having all of the core features by the time of my project demo as I worked on it really hard and I feel successful for having accomplshed that. I did notice that some of my peers did add their own touch of creativity to it, when talking about CSS, and I definitely admired those that had the shopping cart stretch feature implemented, which is something I would like to try next time.
+
+Open-source libraries used
+Add any links to open-source libraries used in your project.
+
+Shout out
+Give a shout out to somebody from your cohort that especially helped you during your project. This can be a fellow peer, instructor, TA, mentor, etc.
+
+  Shout to Gabriel and Lacie from my pod, as well as TA Rebecca for helping me out during my project!
