@@ -9,6 +9,7 @@
 
 
 .product-grid{
+  transform: translate(2%, 0%);
   margin-top: 2vh;
   margin-bottom: 2vh; 
   margin: auto;
@@ -16,7 +17,9 @@
   display: flex;
   flex-wrap: wrap;
 }
-
+h2{
+  transform: translate(2%, 0%);
+}
 .hero{
 background: rgb(64,139,47);
 background: linear-gradient(90deg, rgba(64,139,47,1) 0%, rgba(9,106,121,1) 0%, rgba(65,165,69,1) 54%, rgba(124,226,15,1) 100%);
@@ -31,6 +34,7 @@ background: linear-gradient(90deg, rgba(64,139,47,1) 0%, rgba(9,106,121,1) 0%, r
   height: 350px;
 }
 .intro{
+    transform: translate(2%, 0%);
     flex: 1;
     padding: 0 40px;
     display: flex;

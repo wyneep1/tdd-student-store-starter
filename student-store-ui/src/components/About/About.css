@@ -27,4 +27,5 @@
 .heading{
     margin: 10px 0 30px;
     font-weight: 600;
+    transform: translate(3%, 0%);
 }

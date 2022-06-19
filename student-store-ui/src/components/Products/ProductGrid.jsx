@@ -29,7 +29,10 @@ console.log("Entered product grid: ", props.products)
                                 class = "product-box"
                                 showDescription={false} 
                                 product={product}
-                                productId = {product.id}/>;
+                                productId = {product.id}
+                                handleAddItemToCart={props.handleAddItemToCart}
+                                handleRemoveItemFromCart={props.handleRemoveItemFromCart}
+                                quantity={props.shoppingCart[product.id] || 0}/>;
          })}
     </div>
   )

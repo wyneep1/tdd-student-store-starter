@@ -12,7 +12,7 @@ export default function Home(props) {
       <Hero/>
       <Search searchBar={searchBar} setSearchBar={setSearchBar} setCategory={setCategory}/>
       <h2>Best Selling Products</h2>
-      <ProductGrid category={category} searchBar={searchBar} products={props.products}/>
+      <ProductGrid category={category} searchBar={searchBar} products={props.products} handleAddItemToCart={props.handleAddItemToCart} handleRemoveItemFromCart={props.handleRemoveItemFromCart} shoppingCart={props.shoppingCart}/>
       </div>
   )
 }

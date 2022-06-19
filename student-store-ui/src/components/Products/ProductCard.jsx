@@ -1,26 +1,32 @@
 import * as React from "react"
 import "./ProductCard.css"
-import {
-  BrowserRouter as Router,
-  Route, 
-  Link, 
-} from "react-router-dom";
+import { Link } from "react-router-dom"
 
-export default function ProductCard({ product, productId, quantity = 0, handleAddItemToCart, handleRemoveItemFromCart, showDescription }) {
-
+export default function ProductCard(props) {
+  const product = props.product
   return (
     <div className="product-card">
         <Link to={"products/" + product.id}>
         <img id="product-poster" src={product.image}/>
         </Link>
-        <h2 className="product-name">{product.name}</h2>
+        <div className="product-info">
+          <div className="details">
+          <p className="product-name">{product.name}</p>
         <p className="product-price">${product.price}</p>
-        {showDescription &&
+        </div>
+        {props.showDescription &&
             <p className="product-description">{product.description}</p>
         } 
-          <button type="button" className="add" onClick={() => handleAddItemToCart(productId)}>+</button>
-          <button type="button" className="remove" onClick={() => handleRemoveItemFromCart(productId)}>-</button>
-          <p className="product-quantity">{quantity}</p>
+          <div className="actions">
+          <div className="shop-btns">
+          <button type="button" className="add" onClick={() => props.handleAddItemToCart(product.id)}><i className="material-icons">+</i></button>
+          <button type="button" className="remove" disabled={props.quantity === 0 ? true : false} onClick={() => props.handleRemoveItemFromCart(product.id)}><i clasName="material-icons remove-btn">-</i></button>
+          </div>
+          <span className="quantity">
+            {props.quantity === 0 ? <span className="amt hide">{props.quantity}</span> : <span className="amt">{props.quantity}</span>}
+          </span>
+    </div>
+    </div>
     </div>
   )}
 
