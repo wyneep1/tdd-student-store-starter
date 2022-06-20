@@ -9,11 +9,11 @@ export default function Search(props) {
   return (
     <div className="search">
         <div className="search-input">
-        <label htmlFor="productSearch">Search</label>
+        <label htmlFor="productSearch"></label>
                 <input
                     name="searching"
                     type="text"
-                    placeholder="Cheetos"
+                    placeholder="Search"
                     value={props.searchBar}
                     onChange={(e) => props.setSearchBar(e.target.value)}
                     />

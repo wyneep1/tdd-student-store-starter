@@ -17,7 +17,19 @@
     margin-top:auto;
     
 }
-
+.search-input input{
+    transform: translate(2%, 0%);
+    padding-right: 2rem;
+    height: 40px;
+    padding: 0 15px;
+    border-radius: 8px 0 0 8px;
+    border: solid 1px #b1b1b1;
+    flex: 1;
+    font-size: 16px;
+    min-width: 65%;
+    display: flex;
+    margin-bottom: 1cm;
+}
 #all{
     background-color: #00c385;
     border: 1px solid rgba(0, 0, 0, 0.1);
