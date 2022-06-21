@@ -16,7 +16,7 @@ export default function App() {
   const [error, setError] = React.useState(false);
   const [checkingOutError, setCheckingOutError]=React.useState("")
   const [isOpen, setIsOpen] = React.useState(false); //tells us if sidebar is in the open or closed state
-  const [shoppingCart, setShoppingCart] = React.useState(false); //Each object in the array should have two fields: itemId which stores the id of the item being purchased
+  const [shoppingCart, setShoppingCart] = React.useState({}); //Each object in the array should have two fields: itemId which stores the id of the item being purchased
   //The `quantity` field should store a number representing how many of that item the user is purchasing.
   const[checkOutForm, setCheckOutForm] = React.useState({name:"", email: ""});
   //`checkoutForm` - the user's information that will be sent to the API when they checkout

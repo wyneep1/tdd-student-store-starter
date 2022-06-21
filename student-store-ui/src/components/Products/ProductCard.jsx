@@ -20,7 +20,7 @@ export default function ProductCard(props) {
           <div className="actions">
           <div className="shop-btns">
           <button type="button" className="add" onClick={() => props.handleAddItemToCart(product.id)}><i className="material-icons">+</i></button>
-          <button type="button" className="remove" disabled={props.quantity === 0 ? true : false} onClick={() => props.handleRemoveItemFromCart(product.id)}><i clasName="material-icons remove-btn">-</i></button>
+          <button type="button" className="remove" disabled={props.quantity === 0 ? true : false} onClick={() => props.handleRemoveItemFromCart(product.id)}><i className="material-icons remove-btn">-</i></button>
           </div>
           <span className="quantity">
             {props.quantity === 0 ? <span className="amt hide">{props.quantity}</span> : <span className="amt">{props.quantity}</span>}

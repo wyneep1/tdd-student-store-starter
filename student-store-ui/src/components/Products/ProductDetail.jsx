@@ -5,8 +5,7 @@ import axios from "axios";
 import ProductView from "./ProductView";
 import Hero from "../Hero/Hero";
 
-export default function ProductDetail({ handleAddItemToCart, handleRemoveItemFromCart, isFetching = true,
-  setIsFetching = () => { }, error, setError = () => { }, shoppingCart }) {
+export default function ProductDetail({ handleAddItemToCart, handleRemoveItemFromCart, isFetching = true, setIsFetching = () => { }, error, setError = () => { }, shoppingCart, quantity }) {
   const [product, setProduct] = React.useState({})
   const {productId} = useParams()
   React.useEffect(() => axios.get("https://codepath-store-api.herokuapp.com/store/" + productId)

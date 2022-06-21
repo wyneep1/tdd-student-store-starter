@@ -3,7 +3,7 @@
     flex-direction: column;
     align-items: center;
     height: 100%;
-    width: 200px;
+    width: 400px;
     position: fixed;
     z-index: 100;
     transition: all .2s cubic-bezier(.215,.61,.355,1);
