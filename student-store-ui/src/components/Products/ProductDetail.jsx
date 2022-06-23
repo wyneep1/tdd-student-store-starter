@@ -3,7 +3,6 @@ import { useParams } from "react-router-dom";
 import NotFound from "../NotFound";
 import axios from "axios";
 import ProductView from "./ProductView";
-import Hero from "../Hero/Hero";
 
 export default function ProductDetail({ handleAddItemToCart, handleRemoveItemFromCart, isFetching = true, setIsFetching = () => { }, error, setError = () => { }, shoppingCart, quantity }) {
   const [product, setProduct] = React.useState({})

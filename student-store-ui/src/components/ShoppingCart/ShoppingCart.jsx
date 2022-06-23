@@ -1,5 +1,6 @@
 import * as React from "react"
 import "./ShoppingCart.css"
+import CheckoutForm from "../CheckoutForm"
 
 export default function ShoppingCart(props) {
     return (
@@ -9,7 +10,8 @@ export default function ShoppingCart(props) {
                 {Object.keys(props.shoppingCart).length === 0 ? <div className="notification">
                     No items added to the cart yet. Start shoppping now!
                 </div> : <Cart products={props.products} shoppingCart={props.shoppingCart}/>}
-
+                <CheckoutForm CheckOutForm ={props.CheckOutForm} handleOnCheckoutFormChange={props.handleOnCheckoutFormChange} handleOnSubmitCheckoutForm={props.handleOnSubmitCheckoutForm} checkingOutError={props.checkingOutError}/>
+                <CheckOutInfo setIsOpen={props.setIsOpen} order={props.order} makeReceipt={props.makeReceipt} setMakeReceipt={props.setMakeReceipt} shoppingCart={props.shoppingCart}/>
             </div> : <span className="cart-icons">
                 <i className="cart-plus side-icon"></i>
                 <i className="dollar side-icon"></i>

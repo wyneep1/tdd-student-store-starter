@@ -18,11 +18,13 @@ export default function App() {
   const [isOpen, setIsOpen] = React.useState(false); //tells us if sidebar is in the open or closed state
   const [shoppingCart, setShoppingCart] = React.useState({}); //Each object in the array should have two fields: itemId which stores the id of the item being purchased
   //The `quantity` field should store a number representing how many of that item the user is purchasing.
-  const[checkOutForm, setCheckOutForm] = React.useState({name:"", email: ""});
-  //`checkoutForm` - the user's information that will be sent to the API when they checkout
   const[makeReceipt, setMakeReceipt] = React.useState(false)
   const[order, setOrder]=React.useState({})
-  //store items API
+  const[checkOutForm, setCheckOutForm] = React.useState({
+  name:"", 
+  email: ""
+});
+  //`checkoutForm` - the user's information that will be sent to the API when they checkout
 
   React.useEffect(()=>{
     async function fetchItems(){
@@ -99,10 +101,13 @@ export default function App() {
     for(const item in shoppingCart){
       shopArray.push({itemId: item, quantity:shoppingCart[item]})
     } axios.post("https://codepath-store-api.herokuapp.com/store",
-    { user:{
+    { 
+      user:
+      {
       name: checkOutForm.name,
       email: checkOutForm.email
-    }, shoppingCart: shopArray
+    }, 
+    shoppingCart: shopArray
   }).then(res =>{
     setShoppingCart({})
     setCheckOutForm({name:"", email:""})

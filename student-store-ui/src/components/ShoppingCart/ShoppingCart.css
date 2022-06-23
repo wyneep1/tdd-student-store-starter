@@ -8,6 +8,12 @@
     justify-content: center;
     margin: 0;
 }
+.notification{
+    color: white;
+    text-align: center;
+    margin: 10px;
+    font-weight: 500;
+}
 .checkout-success .card{
     color: white;
     display: flex;

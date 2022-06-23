@@ -25,19 +25,26 @@
 #toggle-image
 {
     width: 40px;
+    display: block;
+    background-color: #2b4344;
+    border: none;
 }
 .closed{
     width: 55px;
     opacity: .86;
-}
-.checkout-Btn{
-    display: block;
-    background-color: #2b4344;
     border: none;
-    cursor:pointer;  
+    background-color: #2b4344;
 }
+
 button:hover{
     -webkit-transform: scale(1.2);
     -ms-transform: scale(1.2);
     transform: scale(1.2);
   }
+.checkout-Btn{
+    border: none;
+    display: block;
+    background-color: #2b4344;
+}
+
+
