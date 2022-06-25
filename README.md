@@ -10,6 +10,8 @@ Project 2:
 Project 3 with Backend implemented:
 (https://recordit.co/FADiAbwv3Y)
 
+Note: I didn't create a new branch in Github, I just updated this branch with my new changes for project 3.
+
 ### Application Features
 
 #### Core Features
