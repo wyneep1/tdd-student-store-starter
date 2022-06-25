@@ -15,25 +15,24 @@ export default function App() {
   const [isFetching, setIsFetching] = React.useState(false);
   const [error, setError] = React.useState(false);
   const [checkingOutError, setCheckingOutError]=React.useState("")
+  const[checkOutForm, setCheckOutForm] = React.useState({name:"", email: ""})
   const [isOpen, setIsOpen] = React.useState(false); //tells us if sidebar is in the open or closed state
   const [shoppingCart, setShoppingCart] = React.useState({}); //Each object in the array should have two fields: itemId which stores the id of the item being purchased
   //The `quantity` field should store a number representing how many of that item the user is purchasing.
   const[makeReceipt, setMakeReceipt] = React.useState(false)
   const[order, setOrder]=React.useState({})
-  const[checkOutForm, setCheckOutForm] = React.useState({
-  name:"", 
-  email: ""
-});
+  const[success, setSuccess] = React.useState(false);
   //`checkoutForm` - the user's information that will be sent to the API when they checkout
 
   React.useEffect(()=>{
     async function fetchItems(){
       setIsFetching(true);
       try{
-       const response = await axios.get("https://codepath-store-api.herokuapp.com/store");
+       const response = await axios.get("http://localhost:3001/store");
           console.log("App.jsx tries", response?.data?.products);
-          if(response?.data?.products){
-            setProducts(response?.data?.products);
+          const posts = response?.data?.products
+          if(posts){
+            setProducts(posts);
           }
         }catch(err){
         console.log(err.response);
@@ -57,10 +56,12 @@ export default function App() {
 
   function handleAddItemToCart(productId){
     if(shoppingCart.hasOwnProperty(productId)){
-      setShoppingCart((prevCart)=> ({...prevCart, [productId]:prevCart[productId] +1}))
+      setShoppingCart((prevCart)=> 
+      ({...prevCart, [productId]:prevCart[productId] +1}))
     }
     else{
-      setShoppingCart((prevCart) => ({...prevCart, [productId]:1}))
+      setShoppingCart((prevCart) => 
+      ({...prevCart, [productId]:1}))
   } setCheckingOutError("")
 //It should accept a single argument - `productId`
 //Should add that product to the `shoppingCart` if it doesn't exist, and set its quantity to `1`
@@ -90,20 +91,19 @@ export default function App() {
   //should update the `checkoutForm` object with the new value from the correct input(s)
   }
   function handleOnSubmitCheckoutForm(){
-
+    let shopArray = []
     if(Object.keys(shoppingCart).length === 0){
       setCheckingOutError("item")
       return;
     } if(checkOutForm.name === "" || checkOutForm.email === ""){
       setCheckingOutError("field")
       return;
-    } let shopArray = []
+    } 
     for(const item in shoppingCart){
       shopArray.push({itemId: item, quantity:shoppingCart[item]})
-    } axios.post("https://codepath-store-api.herokuapp.com/store",
+    } axios.post("http://localhost:3001/store",
     { 
-      user:
-      {
+      user:{
       name: checkOutForm.name,
       email: checkOutForm.email
     }, 
@@ -111,6 +111,7 @@ export default function App() {
   }).then(res =>{
     setShoppingCart({})
     setCheckOutForm({name:"", email:""})
+    setSuccess(true)
     setMakeReceipt(true)
     setOrder(res.data.purchase)
   })
@@ -122,14 +123,16 @@ export default function App() {
       <BrowserRouter>
         <main>
         <Navbar/>
-        <Sidebar isOpen={isOpen} shoppingCart={shoppingCart} products={products} checkOutForm={checkOutForm} handleOnCheckoutFormChange={handleOnCheckoutFormChange} handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm} handleOnToggle={handleOnToggle} setIsOpen={setIsOpen} order={order} makeReceipt={makeReceipt} setMakeReceipt={setMakeReceipt} checkingOutError={checkingOutError}/>
+        <Sidebar success={success} isOpen={isOpen} shoppingCart={shoppingCart} products={products} 
+        checkOutForm={checkOutForm} handleOnCheckoutFormChange={handleOnCheckoutFormChange} handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm} 
+        handleOnToggle={handleOnToggle} setIsOpen={setIsOpen} order={order} makeReceipt={makeReceipt} setMakeReceipt={setMakeReceipt} 
+        checkingOutError={checkingOutError}/>
           <Routes>
             <Route path="/" element={<Home isFetching={isFetching} handleAddItemToCart={handleAddItemToCart} products={products} handleRemoveItemFromCart={handleRemoveItemFromCart} setIsOpen={setIsOpen} shoppingCart={shoppingCart}/>} />
             <Route path="/products/:productId" element={<ProductDetail isFetching={isFetching} setIsFetching={setIsFetching}
                handleAddItemToCart={handleAddItemToCart} handleRemoveItemFromCart={handleRemoveItemFromCart} setError={setError} shoppingCart={shoppingCart}/>}/>
             <Route path="*" element={<NotFound />} />
           </Routes>
-          {/* YOUR CODE HERE! */}
           <About/>
           <Contact/>
           <Footer/>

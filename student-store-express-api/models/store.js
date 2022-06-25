@@ -1,19 +1,20 @@
-const express = require("express")
-const data = require("../data/db.json")
+const {storage} = require("../data/storage");
 
 class Store{
-   static fetchProducts() {
-    return data;
+   static async fetchProducts() {
+    const allProducts = await storage.get("products").value()
+    return allProducts
 
    }
-   static fetchProductById(productId){
-    return data.fetchProducts[productId-1];
+   static async fetchProductById(productId){
+    const product = storage.get("products").find({id:Number(productId)}).value()
+    return product
    }
 
- /*  static purchaseOrder(){
+   static async purchaseOrder(){
     const purchase = await storage.get("purchases").value()
     return purchase
-   }*/
+   }
 
 }
 module.exports = Store

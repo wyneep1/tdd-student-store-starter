@@ -1,15 +1,18 @@
 const express = require("express")
 const morgan = require("morgan")
-const Store = require("./routes/store")
+const storeRouter = require("./routes/store")
+const cors = require("cors")
 const app = express()
+
+
 
 app.use(morgan("tiny"))
 app.use(express.json())
 
-app.get('/store', Store);
-app.get('/store/:productId', Store);
+app.use(cors());
+app.use("/store", storeRouter)
 
-app.get("/", (req, res) => {
+app.get("/", (req,res) => {
     res.status(200).json({"ping":"pong"})
 })
 

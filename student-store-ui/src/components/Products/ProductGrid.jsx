@@ -20,7 +20,7 @@ if(props.searchBar !== ''){
 console.log("Entered product grid: ", props.products)
   return (
 
-    <div className = "product-grid">
+    <div className = "product-grid" id="buy">
       {props.isFetching ?
 				<h1>Loading...</h1>
 				:

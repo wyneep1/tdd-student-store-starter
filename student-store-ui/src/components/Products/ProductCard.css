@@ -70,7 +70,7 @@
 .product-card .amt.hide{
   display: none;
 }
-.product-card .quantity{
+.product-card .product-quantity{
   width: 80px;
   display: flex;
   flex-direction: row;
